@@ -7,7 +7,7 @@ import Footer from '@/components/Home/Footer';
 import MembershipCardHighlight from '@/components/Home/MembershipCardHighlight';
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <main>
       <HeroSection />
       <HowItWorks />
       <MembershipCardHighlight />
@@ -15,6 +15,6 @@ export default function Home() {
       <BusinessPlan />
       <FAQ />
       <Footer />
-    </div>
+    </main>
   );
 }

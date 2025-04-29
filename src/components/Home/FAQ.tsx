@@ -1,3 +1,4 @@
+'use client'
 import { ArrowUpRightFromSquare } from "lucide-react";
 import {
   Accordion,
@@ -7,43 +8,53 @@ import {
 } from "@/components/ui/accordion";
 import faqItems from "@/constant/faq.json";
 import { Button } from "../ui/button";
-const FAQ = () => {
 
+const FAQ = () => {
   return (
-    <>
-      <div className="bg-white">
-        <div className="container mx-auto space-y-16 px-4 py-16 lg:px-8 lg:py-32 xl:max-w-7xl">
-          <div className="text-center">
-            <div className="mb-1 text-sm font-bold tracking-wider text-indigo-600 uppercase">
-              We Answer
-            </div>
-            <h2 className="text-4xl font-black text-black">
-              Frequently Asked Questions
-            </h2>
-          </div>
-          <div className="mx-auto max-w-2xl">
-            <Accordion type="single" collapsible className="w-full">
-              {faqItems.map((item, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left font-semibold">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-7">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-          <div className="text-center">
-            <Button>
-              <span>Go to support center</span>
-              <ArrowUpRightFromSquare className="size-5 opacity-50" />
-            </Button>
-          </div>
+    <section className="container py-24">
+      <div className="mx-auto space-y-16 max-w-5xl">
+        {/* Section Header */}
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Frequently Asked <span className="text-primary">Questions</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Find answers to common questions about our laundry service. Can&apos;t find what you&apos;re looking for? Visit our support center.
+          </p>
+        </div>
+
+        {/* FAQ Accordion */}
+        <div className="mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            {faqItems.map((item, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-border/50"
+              >
+                <AccordionTrigger className="text-left font-signika text-lg hover:text-primary">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        {/* Support Center Button */}
+        <div className="text-center">
+          <Button
+            size="lg"
+            className="group font-signika"
+          >
+            <span>Visit Support Center</span>
+            <ArrowUpRightFromSquare className="ml-2 h-4 w-4 opacity-70 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </Button>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
