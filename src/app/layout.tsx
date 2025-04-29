@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { DM_Sans, Signika } from "next/font/google";
 
+const signika = Signika({
+  subsets: ['latin'],
+  variable: '--font-signika',
+  weight: ['400', '500', '600', '700'],
+})
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   weight: ['400', '500', '600', '700'],
@@ -22,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased font-sans`}
+        className={`${dmSans.variable} ${signika.variable} antialiased font-sans bg-background text-foreground`}
       >
         {children}
       </body>
