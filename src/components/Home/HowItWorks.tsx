@@ -54,7 +54,7 @@ const itemVariants = {
 
 const HowItWorks = () => {
   return (
-    <section className="container py-24 space-y-12">
+    <section id="how-it-works" className="container py-24 space-y-12">
       {/* Section Header */}
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold sm:text-4xl">

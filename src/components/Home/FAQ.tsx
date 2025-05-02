@@ -11,7 +11,7 @@ import { Button } from "../ui/button";
 
 const FAQ = () => {
   return (
-    <section className="container py-24">
+    <section id="faq" className="container py-24">
       <div className="mx-auto space-y-16 max-w-5xl">
         {/* Section Header */}
         <div className="text-center space-y-4">

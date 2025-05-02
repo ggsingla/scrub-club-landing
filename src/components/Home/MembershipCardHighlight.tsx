@@ -3,11 +3,20 @@
 import React from 'react'
 import Tilt from 'react-parallax-tilt'
 import Image from 'next/image'
-import { Check } from 'lucide-react'
+import { Check, ArrowRight } from 'lucide-react'
+import { Button } from '../ui/button'
+
+const memberBenefits = [
+  'Save $10 on every pickup',
+  'First 20lbs included in every pickup',
+  'Priority scheduling & premium support',
+  'Exclusive member-only promotions',
+  'No commitments - cancel anytime',
+]
 
 const MembershipCardHighlight = () => {
   return (
-    <section className="container py-24">
+    <section id="membership" className="container py-24">
       <div className="flex flex-col gap-16 lg:flex-row lg:items-center lg:gap-24">
         {/* Benefits Side */}
         <div className="flex-1 space-y-8">
@@ -15,42 +24,36 @@ const MembershipCardHighlight = () => {
             <h2 className="text-4xl font-bold">
               Join the Elite <span className="text-primary">Scrub Club</span> Membership
             </h2>
-            <p className="font-signika text-lg text-muted-foreground">
-              Get exclusive benefits and savings on every wash with our premium membership.
-            </p>
+          </div>
+
+          <div className="space-y-6">
+            {memberBenefits.map((benefit, index) => (
+              <div key={index} className="space-y-2">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <p className="font-signika text-lg">{benefit}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
-                <Check className="h-4 w-4 text-primary" />
-              </div>
-              <p className="font-signika text-lg">Save $10 on every pickup ($25 instead of $35)</p>
+            <div className="flex items-baseline gap-2">
+              <span className="text-4xl font-bold text-primary">$9.99</span>
+              <span className="text-muted-foreground">/month</span>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
-                <Check className="h-4 w-4 text-primary" />
-              </div>
-              <p className="font-signika text-lg">Includes 20lbs of laundry per pickup</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
-                <Check className="h-4 w-4 text-primary" />
-              </div>
-              <p className="font-signika text-lg">Priority scheduling & premium support</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
-                <Check className="h-4 w-4 text-primary" />
-              </div>
-              <p className="font-signika text-lg">Exclusive member-only promotions</p>
-            </div>
-
-
-            <p className="mt-6 text-xs text-muted-foreground">
-              *Regular per-pound rates apply after 20lbs of laundry
+            <p className="text-sm text-muted-foreground">
+              Membership unlocks $10 savings on every pickup (just $25 instead of $35).
+              Save up to $30+ per month with regular service!
             </p>
           </div>
+
+          <Button size="lg" className="group">
+            Join Scrub Club Elite
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
         </div>
 
         {/* Card Side */}
