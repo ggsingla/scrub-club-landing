@@ -13,12 +13,12 @@ const signika = Signika({
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800', '900'],
 })
 
 export const metadata: Metadata = {
-  title: "Scrub club – Landing page",
-  description: "Scrub club – Landing page",
+  title: "NoScrubs.io - Fresh Laundry, 4-Hour Turnaround",
+  description: "Premium laundry service with 4-hour turnaround. Save with membership, service for individuals and businesses in Austin and Houston.",
 };
 
 export default function RootLayout({
