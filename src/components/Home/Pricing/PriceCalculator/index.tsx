@@ -6,21 +6,10 @@ import { Button } from '@/components/ui/button'
 import { Slider } from '@/components/ui/slider'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import { calculateExtraCharge, ILLUSTRATIONS } from '@/lib/priceCalculatorUtils'
 
-const calculateExtraCharge = (extraWeight: number) => {
-  const tier1 = Math.min(20, extraWeight)
-  const tier2 = Math.min(20, Math.max(0, extraWeight - 20))
-  const tier3 = Math.max(0, extraWeight - 40)
-  return tier1 * 1 + tier2 * 1.5 + tier3 * 2
-}
-const ILLUSTRATIONS = [
-  { max: 20, image: '/basket-levels/level-1.jpg' },
-  { max: 40, image: '/basket-levels/level-2.jpg' },
-  { max: 60, image: '/basket-levels/level-3.jpg' },
-  { max: 80, image: '/basket-levels/level-4.jpg' },
-  { max: 100, image: '/basket-levels/level-5.jpg' },
-]
-
+const BASE_PRICE = 35
+const MEMBER_PRICE = 25
 
 const PriceCalculator = () => {
 
@@ -33,21 +22,14 @@ const PriceCalculator = () => {
     const extraWeight = Math.max(0, selectedWeight - 20)
     const extraCharge = calculateExtraCharge(extraWeight)
 
-    // Calculate regular price (always with base 35)
-    const regularBase = 35
-    setRegularPrice(regularBase + extraCharge)
+    setRegularPrice(BASE_PRICE + extraCharge)
+    setMemberPrice(MEMBER_PRICE + extraCharge)
 
-    // Calculate member price (always with base 25)
-    const memberBase = 25
-    setMemberPrice(memberBase + extraCharge)
-
-    // Update active illustration based on weight
-    const newIllustration = ILLUSTRATIONS.find(ill => selectedWeight <= ill.max) || ILLUSTRATIONS[ILLUSTRATIONS.length - 1]
+    const newIllustration = ILLUSTRATIONS.find(item => selectedWeight <= item.max) || ILLUSTRATIONS[ILLUSTRATIONS.length - 1]
     setActiveIllustration(newIllustration)
   }, [selectedWeight])
 
-  // Calculate monthly savings (assuming 4 pickups per month)
-  const perPickupSavings = regularPrice - memberPrice
+
   return (
     <Card className="mt-8 border-muted-foreground/20">
       <CardContent className="p-8 space-y-8">
@@ -97,8 +79,8 @@ const PriceCalculator = () => {
                   step={5}
                   className="w-full"
                 />
-                <div className="w-full flex justify-between text-xs text-muted-foreground text-center">
-                  <span className='flex flex-col items-center gap-1 w-2'>
+                <div className="w-full flex justify-between text-xs text-muted-foreground text-center px-2">
+                  <span className='flex flex-col items-center gap-1 w-1'>
                     <p>|</p>
                     <p>0</p>
                   </span>
@@ -127,7 +109,7 @@ const PriceCalculator = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
-              <Card className="group hover:border-muted-foreground/30 transition-colors">
+              <Card className="hover:border-muted-foreground/30 transition-colors">
                 <CardContent className="p-6 text-center flex flex-col gap-3 h-full">
                   <h4 className="font-medium">Regular Price</h4>
                   <div className="text-3xl font-bold">
@@ -143,17 +125,17 @@ const PriceCalculator = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-primary bg-primary/5 group hover:bg-primary/10 transition-colors">
+              <Card className="border-primary bg-primary/5 hover:bg-primary/10 transition-colors">
                 <CardContent className="p-6 text-center space-y-3">
                   <h4 className="font-medium">Member Price</h4>
                   <div className="text-3xl font-bold text-primary">
                     ${memberPrice.toFixed(2)}
                   </div>
-                  <p className="text-sm text-muted-foreground">+ $9.99/month membership fee</p>
+                  <p className="text-sm text-muted-foreground">+ $9.99/month</p>
                   <p className="text-sm font-medium text-primary">
-                    Save ${perPickupSavings.toFixed(2)} per pickup
+                    Save $10 per pickup
                   </p>
-                  <Button className="w-full group hover:translate-y-[-2px] transition-all">
+                  <Button className="w-full group">
                     Join & Save
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>

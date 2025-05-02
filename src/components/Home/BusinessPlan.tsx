@@ -48,10 +48,10 @@ const BUSINESS_BENEFITS = [
 
 const BusinessPlan = () => {
   return (
-    <section className="container py-24 space-y-12">
+    <section className="container py-24 space-y-12" id="business">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold sm:text-4xl">
-          Small Business Laundry Solutions
+          Hassle-free laundry for your business
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Let us handle your laundry needs while you focus on growing your business.
@@ -126,14 +126,6 @@ const BusinessPlan = () => {
           </div>
         </div>
       </Card>
-
-      {/* Trust Indicators */}
-      <div className="text-center space-y-4 pt-8">
-        <p className="text-sm text-muted-foreground">
-          Trusted by 100+ local businesses in Austin and Houston
-        </p>
-        {/* You can add local business logos here */}
-      </div>
     </section>
   )
 }

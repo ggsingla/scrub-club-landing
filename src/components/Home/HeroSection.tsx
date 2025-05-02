@@ -24,12 +24,10 @@ const HeroSection = () => {
           {/* Empty div for spacing on desktop */}
           <div className="hidden lg:block min-h-[500px]" />
 
-          {/* Content */}
           <div className="space-y-8 pt-8 lg:pt-0">
-            {/* Featured badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary">
               <Clock className="h-4 w-4" />
-              <span className="text-sm font-medium">Ready in just 4 hours</span>
+              <span className="text-sm font-medium">Ready in less than 4 hours</span>
             </div>
 
             {/* Headline and description */}
@@ -65,19 +63,17 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="group bg-primary hover:bg-primary/90 shadow-lg">
                 Start Saving Today
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="lg" variant="outline" className="group hover:bg-secondary">
+              <Button size="lg" variant="outline" className="group">
                 Calculate Your Savings
-                <ArrowRight className="ml-2 h-4 w-4 opacity-70 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
 
-            {/* Trust signals */}
             <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="flex items-center gap-1">
                 <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
@@ -86,10 +82,6 @@ const HeroSection = () => {
                 <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 <span className="ml-1 text-sm font-medium">4.9/5 from 500+ reviews</span>
-              </div>
-              <div className="text-sm text-muted-foreground flex items-center gap-1">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary/50"></span>
-                <span>Over 10,000 loads cleaned</span>
               </div>
             </div>
           </div>
