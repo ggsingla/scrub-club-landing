@@ -17,7 +17,7 @@ const memberBenefits = [
 const MembershipCardHighlight = () => {
   return (
     <section id="membership" className="container py-24">
-      <div className="flex flex-col gap-16 lg:flex-row lg:items-center lg:gap-24">
+      <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
         {/* Benefits Side */}
         <div className="flex-1 space-y-8">
           <div className="space-y-4">
@@ -57,7 +57,7 @@ const MembershipCardHighlight = () => {
         </div>
 
         {/* Card Side */}
-        <div className="flex-1 flex justify-center items-center">
+        <div className="flex-1 flex justify-center items-center sm:py-12 sm:bg-accent/40 sm:rounded-2xl h-full">
           <Tilt
             className="w-[380px]"
             glareEnable={true}
@@ -65,10 +65,10 @@ const MembershipCardHighlight = () => {
             glareBorderRadius="10px"
             glareColor="#ffffff"
             glarePosition="all"
-            tiltMaxAngleX={10}
-            tiltMaxAngleY={10}
+            tiltMaxAngleX={15}
+            tiltMaxAngleY={15}
             perspective={2000}
-            scale={1.1}
+            scale={1.05}
             transitionSpeed={2000}
           >
             <div className="relative h-[220px] w-full overflow-hidden rounded-xl bg-primary p-6 text-primary-foreground shadow-2xl transition-all duration-500 group">
