@@ -29,7 +29,7 @@ const BucketSlider = React.forwardRef<
     <div className="relative flex items-center h-full w-full">
       {/* Step Indicators */}
       {showSteps && (
-        <div className="absolute left-0 h-full py-4 flex flex-col justify-between pointer-events-none z-10">
+        <div className="absolute left-0 h-full py-5 flex flex-col justify-between pointer-events-none z-10">
           {finalStepLabels.map((step, index) => {
             // Special handling for edge cases
             const isPassed = step.value === max
