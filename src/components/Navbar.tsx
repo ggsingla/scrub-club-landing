@@ -70,12 +70,6 @@ const Navbar = () => {
             </Button>
             <Button className="text-sm font-medium group">
               Schedule Pickup
-              <div className="relative ml-1">
-                <span className="absolute -top-1.5 -right-1.5 flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/50 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-                </span>
-              </div>
             </Button>
           </div>
         </div>
