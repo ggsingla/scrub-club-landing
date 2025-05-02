@@ -75,25 +75,34 @@ const HowItWorks = () => {
       >
         {steps.map((step, index) => (
           <motion.div key={step.title} variants={itemVariants}>
-            <Card className="relative group hover:shadow-lg transition-shadow duration-300 border-2 border-border/50">
-              <CardContent className="pt-6 space-y-4">
+            <Card className="relative group hover:shadow-lg transition-all duration-300 border-2 border-border/50 pt-8 h-[400px] flex flex-col">
+              <CardContent className="flex-1 flex flex-col">
                 {/* Step Number */}
-                <div className="absolute -top-4 left-4 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
-                  {index + 1}
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                  <div className="relative">
+                    {/* Background Circle */}
+                    <div className="absolute inset-0 rounded-full bg-primary blur-[2px] scale-110 opacity-50" />
+                    {/* Main Circle */}
+                    <div className="relative w-12 h-12 rounded-full bg-primary ring-4 ring-background flex items-center justify-center">
+                      <span className="font-signika text-xl font-bold text-primary-foreground">
+                        {index + 1}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Image */}
-                <div className="relative h-48 w-full mb-4 group-hover:scale-105 transition-transform duration-300">
+                {/* Image Container - Fixed Height */}
+                <div className="h-48 relative mb-6">
                   <Image
                     src={step.image}
                     alt={step.alt}
                     fill
-                    className="object-contain"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
-                {/* Content */}
-                <div className="space-y-2 text-center">
+                {/* Content - Will take remaining space */}
+                <div className="flex-1 flex flex-col justify-between text-center space-y-4">
                   <h3 className="font-signika text-xl font-semibold">{step.title}</h3>
                   <p className="text-muted-foreground">{step.description}</p>
                 </div>

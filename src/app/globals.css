@@ -10,7 +10,7 @@
 
 @layer base {
   :root {
-    --background: 240 100% 99%; /* Very light indigo tint */
+    --background: 330 33% 99%; /* Very light indigo tint */
     --foreground: 234 42% 15%; /* Soft navy-indigo text */
 
     --card: 0 0% 100%;
@@ -19,7 +19,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 234 42% 15%;
 
-    --primary: 252 100% 59%;
+    --primary: 252 85% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 33% 97%;

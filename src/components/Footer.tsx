@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MessageCircle } from 'lucide-react'
-import { Button } from '../ui/button'
+import { Button } from './ui/button'
 
 const Footer = () => {
   return (
@@ -20,7 +20,7 @@ const Footer = () => {
                 height={40}
                 className="rounded-full"
               />
-              <span className="font-signika text-xl font-bold">NoScrubs</span>
+              <span className="font-signika text-xl font-bold">NoScrubs.io</span>
             </Link>
             <p className="text-muted-foreground">
               NoScrubs delivers affordable, ultra-fast laundry service, with clothes returned in just 4 hours.

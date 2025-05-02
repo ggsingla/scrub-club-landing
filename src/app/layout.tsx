@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { DM_Sans, Signika } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const signika = Signika({
   subsets: ['latin'],
@@ -25,12 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${dmSans.variable} ${signika.variable} antialiased font-sans bg-background text-foreground`}
+        className={`${dmSans.variable} ${signika.variable} antialiased font-sans bg-background text-foreground min-h-screen flex flex-col`}
       >
-        {children}
+        <Navbar />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
 }
+
