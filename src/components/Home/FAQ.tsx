@@ -50,7 +50,7 @@ const FAQ = () => {
             className="group"
           >
             <span>Visit Support Center</span>
-            <ArrowUpRightFromSquare className="ml-2 h-4 w-4 opacity-70 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <ArrowUpRightFromSquare className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Button>
         </div>
       </div>

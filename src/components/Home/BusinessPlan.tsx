@@ -115,9 +115,9 @@ const BusinessPlan = () => {
               <p className="text-sm text-muted-foreground">For new business partners</p>
             </div>
             <div className="space-y-3">
-              <Button size="lg" className="w-full gap-2">
+              <Button size="lg" className="w-full gap-2 group">
                 Get Custom Quote
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <p className="text-xs text-muted-foreground">
                 No long-term contracts required

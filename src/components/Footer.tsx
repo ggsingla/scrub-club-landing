@@ -80,7 +80,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/10 pt-8 text-muted-foreground sm:flex-row">
-          <p>© 2025 NoScrubs Laundry</p>
+          <p>© 2025 NoScrubs.io</p>
           <div className="flex gap-8">
             <Link href="/privacy" className="hover:text-primary transition-colors">
               Privacy Policy
