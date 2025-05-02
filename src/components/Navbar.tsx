@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import { Menu } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 
 const routes = [
   { name: 'How it works', href: '#how-it-works' },
@@ -33,14 +32,11 @@ const Navbar = () => {
   }, [])
 
   return (
-    <motion.header
+    <header
       className={`sticky top-0 z-50 w-full border-b ${scrolled
         ? 'border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'
         : 'border-transparent bg-background'
         } transition-all duration-200`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
       <nav className="container flex h-16 items-center">
         {/* Logo */}
@@ -52,7 +48,7 @@ const Navbar = () => {
             height={32}
             className="rounded-full"
           />
-          <span className="font-signika text-xl font-bold">NoScrubs</span>
+          <span className="text-xl font-extrabold">NoScrubs</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -132,7 +128,7 @@ const Navbar = () => {
           </Sheet>
         </div>
       </nav>
-    </motion.header>
+    </header>
   )
 }
 
