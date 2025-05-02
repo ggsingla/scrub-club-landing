@@ -20,7 +20,7 @@ const Footer = () => {
                 height={40}
                 className="rounded-full"
               />
-              <span className="font-signika text-xl font-bold">NoScrubs.io</span>
+              <span className="text-xl font-bold">NoScrubs.io</span>
             </Link>
             <p className="text-muted-foreground">
               NoScrubs delivers affordable, ultra-fast laundry service, with clothes returned in just 4 hours.
@@ -34,7 +34,7 @@ const Footer = () => {
 
           {/* Company Links */}
           <div className="space-y-4">
-            <h3 className="font-signika text-lg font-semibold">Company</h3>
+            <h3 className="text-lg font-semibold">Company</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li>
                 <Link href="/contact" className="hover:text-primary transition-colors">Contact us</Link>
@@ -50,7 +50,7 @@ const Footer = () => {
 
           {/* Cities Links */}
           <div className="space-y-4">
-            <h3 className="font-signika text-lg font-semibold">Cities</h3>
+            <h3 className="text-lg font-semibold">Cities</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li>
                 <Link href="/austin" className="hover:text-primary transition-colors">Austin</Link>
@@ -63,7 +63,7 @@ const Footer = () => {
 
           {/* About Us Links */}
           <div className="space-y-4">
-            <h3 className="font-signika text-lg font-semibold">About Us</h3>
+            <h3 className="text-lg font-semibold">About Us</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li>
                 <Link href="/careers" className="hover:text-primary transition-colors">Working at No Scrubs</Link>

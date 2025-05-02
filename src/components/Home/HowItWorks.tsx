@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
-import { motion } from 'framer-motion'
 
 const steps = [
   {
@@ -31,26 +30,6 @@ const steps = [
   }
 ]
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-}
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5
-    }
-  }
-}
 
 const HowItWorks = () => {
   return (
@@ -66,15 +45,11 @@ const HowItWorks = () => {
       </div>
 
       {/* Steps Grid */}
-      <motion.div
+      <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
       >
         {steps.map((step, index) => (
-          <motion.div key={step.title} variants={itemVariants}>
+          <div key={step.title}>
             <Card className="relative group hover:shadow-lg transition-all duration-300 border-2 border-border/50 pt-8 h-[400px] flex flex-col">
               <CardContent className="flex-1 flex flex-col">
                 {/* Step Number */}
@@ -84,7 +59,7 @@ const HowItWorks = () => {
                     <div className="absolute inset-0 rounded-full bg-primary blur-[2px] scale-110 opacity-50" />
                     {/* Main Circle */}
                     <div className="relative w-12 h-12 rounded-full bg-primary ring-4 ring-background flex items-center justify-center">
-                      <span className="font-signika text-xl font-bold text-primary-foreground">
+                      <span className="text-xl font-bold text-primary-foreground">
                         {index + 1}
                       </span>
                     </div>
@@ -103,20 +78,20 @@ const HowItWorks = () => {
 
                 {/* Content - Will take remaining space */}
                 <div className="flex-1 flex flex-col justify-between text-center space-y-4">
-                  <h3 className="font-signika text-xl font-semibold">{step.title}</h3>
+                  <h3 className="text-xl font-semibold">{step.title}</h3>
                   <p className="text-muted-foreground">{step.description}</p>
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
 
       {/* Additional Info */}
       <div className="text-center text-muted-foreground/80 text-sm">
         <p>All pickups and deliveries are handled by our trusted and verified team members.</p>
       </div>
-    </section>
+    </section >
   )
 }
 

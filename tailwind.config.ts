@@ -16,7 +16,6 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)'],
-        signika: ['var(--font-signika)'],
       },
       colors: {
         background: 'hsl(var(--background))',

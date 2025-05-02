@@ -33,7 +33,7 @@ const MembershipCardHighlight = () => {
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <p className="font-signika text-lg">{benefit}</p>
+                  <p className="text-lg">{benefit}</p>
                 </div>
               </div>
             ))}
@@ -92,7 +92,7 @@ const MembershipCardHighlight = () => {
               <div className="relative mt-8 space-y-4">
                 <div>
                   <div className="text-xs uppercase tracking-wider opacity-70">Member</div>
-                  <div className="font-signika text-lg font-medium tracking-wide">John Scrubber</div>
+                  <div className="text-lg font-medium tracking-wide">John Scrubber</div>
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider opacity-70">Member Since</div>
@@ -104,7 +104,7 @@ const MembershipCardHighlight = () => {
               <div className="absolute bottom-6 right-6">
                 <div className="text-right">
                   <div className="text-xs uppercase tracking-wider opacity-70">Status</div>
-                  <div className="font-signika text-lg font-semibold tracking-wide">
+                  <div className="text-lg font-semibold tracking-wide">
                     Scrub Club Elite
                   </div>
                 </div>

@@ -99,7 +99,7 @@ const Navbar = () => {
                     height={32}
                     className="rounded-full"
                   />
-                  <span className="font-signika text-xl font-bold">NoScrubs</span>
+                  <span className="text-xl font-bold">NoScrubs</span>
                 </Link>
 
                 <div className="flex flex-col gap-4">

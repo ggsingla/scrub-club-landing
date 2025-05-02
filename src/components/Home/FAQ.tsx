@@ -32,7 +32,7 @@ const FAQ = () => {
                 value={`item-${index}`}
                 className="border-border/50"
               >
-                <AccordionTrigger className="text-left font-signika text-lg hover:text-primary">
+                <AccordionTrigger className="text-left text-lg hover:text-primary">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">
@@ -47,7 +47,7 @@ const FAQ = () => {
         <div className="text-center">
           <Button
             size="lg"
-            className="group font-signika"
+            className="group"
           >
             <span>Visit Support Center</span>
             <ArrowUpRightFromSquare className="ml-2 h-4 w-4 opacity-70 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
